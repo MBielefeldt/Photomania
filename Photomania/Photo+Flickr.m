@@ -7,12 +7,13 @@
 //
 
 #import "Photo+Flickr.h"
+#import "Photographer+Create.h"
 
 #import "FlickrFetcher.h"
 
 @implementation Photo (Flickr)
 
-- (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary InManagedObjectContext:(NSManagedObjectContext *)context
++ (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary InManagedObjectContext:(NSManagedObjectContext *)context
 {
     Photo *photo = nil;
 
@@ -33,6 +34,10 @@
         photo.title = [photoDictionary[FLICKR_PHOTO_TITLE] description];
         photo.subtitle = [[photoDictionary valueForKeyPath:FLICKR_PHOTO_DESCRIPTION] description];
         photo.imageURL = [[FlickrFetcher urlForPhoto:photoDictionary format:FlickrPhotoFormatLarge] absoluteString];
+        
+        NSString *photographerName = [photoDictionary[FLICKR_PHOTO_OWNER] description];
+        Photographer *photographer = [Photographer photographerWithName:photographerName inManagedObjectContext:context];
+        photo.whoTook = photographer;
     }
     else
     {
