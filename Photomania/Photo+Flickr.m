@@ -32,7 +32,7 @@
         
         photo.unique = [photoDictionary[FLICKR_PHOTO_ID] description];
         photo.title = [photoDictionary[FLICKR_PHOTO_TITLE] description];
-        photo.subtitle = [[photoDictionary valueForKeyPath:FLICKR_PHOTO_DESCRIPTION] description];
+        photo.subtitle = [photoDictionary valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
         photo.imageURL = [[FlickrFetcher urlForPhoto:photoDictionary format:FlickrPhotoFormatLarge] absoluteString];
         
         NSString *photographerName = [photoDictionary[FLICKR_PHOTO_OWNER] description];

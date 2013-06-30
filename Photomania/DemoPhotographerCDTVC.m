@@ -41,12 +41,12 @@
 
 - (void)useDemoDocument
 {
-    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentationDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     url = [url URLByAppendingPathComponent:@"Demo Document"];
     
     UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
     
-    if ([[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
         // create it
         [document saveToURL:url
            forSaveOperation:UIDocumentSaveForCreating
@@ -57,25 +57,26 @@
               }
           }];
     }
-    else
-        if ([document documentState] == UIDocumentStateClosed) {
-            // open it
-            [document openWithCompletionHandler:^(BOOL suucess) {
+    else if (document.documentState == UIDocumentStateClosed) {
+        // open it
+        [document openWithCompletionHandler:^(BOOL success) {
+            if (success) {
                 self.managedObjectContext = document.managedObjectContext;
                 [self refresh];
-            }];
-        }
-        else {
-            // try to use it
-            self.managedObjectContext = document.managedObjectContext;
-        }
+            }
+        }];
+    }
+    else {
+        // try to use it
+        self.managedObjectContext = document.managedObjectContext;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [self useDemoDocument];
+    if (!self.managedObjectContext) [self useDemoDocument];
 }
 
 @end

@@ -24,7 +24,8 @@
         
         self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                             managedObjectContext:managedObjectContext
-                                                                              sectionNameKeyPath:nil cacheName:nil];
+                                                                              sectionNameKeyPath:nil
+                                                                                       cacheName:nil];
     }
     else {
         self.fetchedResultsController = nil;

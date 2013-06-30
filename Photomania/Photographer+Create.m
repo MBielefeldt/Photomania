@@ -26,7 +26,7 @@
         NSArray *matches = [context executeFetchRequest:request error:&error];
         
         if (matches == nil || matches.count > 1) {
-            // handler error
+            // handle error
         }
         else if (matches.count == 0) {
             photographer = [NSEntityDescription insertNewObjectForEntityForName:@"Photographer"

@@ -16,10 +16,10 @@
     _photographer = photographer;
     
     self.title = photographer.name;
-    [self setupFetchResultController];
+    [self setupFetchedResultsController];
 }
 
-- (void)setupFetchResultController
+- (void)setupFetchedResultsController
 {
     if (self.photographer.managedObjectContext) {
         
