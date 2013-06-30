@@ -17,7 +17,7 @@
     [self.refreshControl beginRefreshing];
     dispatch_queue_t fetchQ = dispatch_queue_create("Flickr Fetch Queue", NULL);
     dispatch_async(fetchQ, ^{
-        NSArray *photos = [FlickrFetcher recentGeoreferencedPhotos];
+        NSArray *photos = [FlickrFetcher latestGeoreferencedPhotos];
         // put photos in core data database
         [self.managedObjectContext performBlock:^{
             for (NSDictionary *photo in photos) {

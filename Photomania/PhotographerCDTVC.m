@@ -9,6 +9,7 @@
 #import "PhotographerCDTVC.h"
 
 #import "Photographer.h"
+#import "PhotosByPhotographerCDTVC.h"
 
 @implementation PhotographerCDTVC
 
