@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08503D2C1780372B00B98128 /* Photographer+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 08503D2B178035D300B98128 /* Photographer+Create.m */; };
+		08503D2F178039FE00B98128 /* Photographer.m in Sources */ = {isa = PBXBuildFile; fileRef = 08503D2E178039DD00B98128 /* Photographer.m */; };
 		08D459B8177F130400B5DF0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D459B7177F130400B5DF0D /* Foundation.framework */; };
 		08D459BA177F130400B5DF0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D459B9177F130400B5DF0D /* CoreGraphics.framework */; };
 		08D459BC177F130400B5DF0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D459BB177F130400B5DF0D /* UIKit.framework */; };
@@ -22,7 +24,6 @@
 		08D459E3177F130400B5DF0D /* PhotomaniaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D459E2177F130400B5DF0D /* PhotomaniaTests.m */; };
 		08D459EE177F134A00B5DF0D /* Photomania.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08D459EC177F134A00B5DF0D /* Photomania.xcdatamodeld */; };
 		08D459F1177F13DC00B5DF0D /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D459F0177F13DC00B5DF0D /* Photo.m */; };
-		08D459F4177F13DC00B5DF0D /* Photographer.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D459F3177F13DC00B5DF0D /* Photographer.m */; };
 		08D459F7177F140B00B5DF0D /* Photo+Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D459F6177F140B00B5DF0D /* Photo+Flickr.m */; };
 		08D459FA177F16A000B5DF0D /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D459F9177F16A000B5DF0D /* FlickrFetcher.m */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08503D2A178035D300B98128 /* Photographer+Create.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photographer+Create.h"; sourceTree = "<group>"; };
+		08503D2B178035D300B98128 /* Photographer+Create.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Photographer+Create.m"; sourceTree = "<group>"; };
+		08503D2D178039DD00B98128 /* Photographer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photographer.h; sourceTree = "<group>"; };
+		08503D2E178039DD00B98128 /* Photographer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photographer.m; sourceTree = "<group>"; };
 		08D459B4177F130400B5DF0D /* Photomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D459B7177F130400B5DF0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08D459B9177F130400B5DF0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,8 +63,6 @@
 		08D459ED177F134A00B5DF0D /* Photomania.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Photomania.xcdatamodel; sourceTree = "<group>"; };
 		08D459EF177F13DC00B5DF0D /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		08D459F0177F13DC00B5DF0D /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
-		08D459F2177F13DC00B5DF0D /* Photographer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photographer.h; sourceTree = "<group>"; };
-		08D459F3177F13DC00B5DF0D /* Photographer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photographer.m; sourceTree = "<group>"; };
 		08D459F5177F140B00B5DF0D /* Photo+Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+Flickr.h"; sourceTree = "<group>"; };
 		08D459F6177F140B00B5DF0D /* Photo+Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+Flickr.m"; sourceTree = "<group>"; };
 		08D459F8177F16A000B5DF0D /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
@@ -125,12 +128,14 @@
 			isa = PBXGroup;
 			children = (
 				08D459EC177F134A00B5DF0D /* Photomania.xcdatamodeld */,
+				08503D2D178039DD00B98128 /* Photographer.h */,
+				08503D2E178039DD00B98128 /* Photographer.m */,
 				08D459EF177F13DC00B5DF0D /* Photo.h */,
 				08D459F0177F13DC00B5DF0D /* Photo.m */,
 				08D459F5177F140B00B5DF0D /* Photo+Flickr.h */,
 				08D459F6177F140B00B5DF0D /* Photo+Flickr.m */,
-				08D459F2177F13DC00B5DF0D /* Photographer.h */,
-				08D459F3177F13DC00B5DF0D /* Photographer.m */,
+				08503D2A178035D300B98128 /* Photographer+Create.h */,
+				08503D2B178035D300B98128 /* Photographer+Create.m */,
 				08D459FB177F16D800B5DF0D /* FlickrAPIKey.h */,
 				08D459F8177F16A000B5DF0D /* FlickrFetcher.h */,
 				08D459F9177F16A000B5DF0D /* FlickrFetcher.m */,
@@ -271,11 +276,12 @@
 			files = (
 				08D459F1177F13DC00B5DF0D /* Photo.m in Sources */,
 				08D459C8177F130400B5DF0D /* AppDelegate.m in Sources */,
+				08503D2C1780372B00B98128 /* Photographer+Create.m in Sources */,
 				08D459FA177F16A000B5DF0D /* FlickrFetcher.m in Sources */,
+				08503D2F178039FE00B98128 /* Photographer.m in Sources */,
 				08D459C4177F130400B5DF0D /* main.m in Sources */,
 				08D459F7177F140B00B5DF0D /* Photo+Flickr.m in Sources */,
 				08D459EE177F134A00B5DF0D /* Photomania.xcdatamodeld in Sources */,
-				08D459F4177F13DC00B5DF0D /* Photographer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +484,7 @@
 				08D459E8177F130500B5DF0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		08D459E9177F130500B5DF0D /* Build configuration list for PBXNativeTarget "PhotomaniaTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +493,7 @@
 				08D459EB177F130500B5DF0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

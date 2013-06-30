@@ -18,9 +18,9 @@
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
-    request.predicate = [NSPredicate predicateWithFormat:@"unique = %@", [[photoDictionary[FLICKR_PHOTO_ID] description]];
+    request.predicate = [NSPredicate predicateWithFormat:@"unique = %@", [photoDictionary[FLICKR_PHOTO_ID] description]];
     
-    NSError *error = nil;
+    NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];
                          
     if (matches == nil || matches.count > 1) {

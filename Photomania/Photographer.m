@@ -2,7 +2,7 @@
 //  Photographer.m
 //  Photomania
 //
-//  Created by Mads Bielefeldt on 29/06/13.
+//  Created by Mads Bielefeldt on 30/06/13.
 //  Copyright (c) 2013 GN ReSound A/S. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 @implementation Photographer
 
-@dynamic attribute;
+@dynamic name;
 @dynamic photos;
 
 @end
