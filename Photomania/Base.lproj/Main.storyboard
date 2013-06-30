@@ -68,11 +68,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo" textLabel="gyy-BR-BWV" detailTextLabel="727-se-T2J" style="IBUITableViewCellStyleSubtitle" id="TKV-ii-aHQ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo" textLabel="gyy-BR-BWV" detailTextLabel="727-se-T2J" style="IBUITableViewCellStyleSubtitle" id="TKV-ii-aHQ">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gyy-BR-BWV">
@@ -92,6 +92,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="xWm-VH-R8N" kind="push" identifier="setImageURL:" id="Nwl-SY-gSd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -106,21 +109,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2S-qn-STm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709" y="-465"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="mgT-cu-TKg">
-            <objects>
-                <viewController id="Zch-et-Fhh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4mx-N2-2LX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pg3-wQ-D00" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1160" y="-464"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tJQ-lP-O6A">
@@ -141,6 +129,43 @@
             </objects>
             <point key="canvasLocation" x="-258" y="-465"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="1ZD-mT-3go">
+            <objects>
+                <viewController id="xWm-VH-R8N" customClass="ImageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pdu-D3-e6D">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crG-os-4sj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                            </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="t1u-b9-Wjp">
+                                <rect key="frame" x="141" y="242" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="crG-os-4sj" firstAttribute="top" secondItem="pdu-D3-e6D" secondAttribute="top" id="C18-Rj-Kjn"/>
+                            <constraint firstItem="crG-os-4sj" firstAttribute="leading" secondItem="pdu-D3-e6D" secondAttribute="leading" id="K2U-Fm-MHo"/>
+                            <constraint firstItem="t1u-b9-Wjp" firstAttribute="leading" secondItem="pdu-D3-e6D" secondAttribute="leading" constant="141" id="O26-US-Jcf"/>
+                            <constraint firstItem="crG-os-4sj" firstAttribute="trailing" secondItem="pdu-D3-e6D" secondAttribute="trailing" id="P5B-yj-CN9"/>
+                            <constraint firstItem="t1u-b9-Wjp" firstAttribute="centerY" secondItem="crG-os-4sj" secondAttribute="centerY" id="cbZ-B4-T0q"/>
+                            <constraint firstItem="crG-os-4sj" firstAttribute="bottom" secondItem="pdu-D3-e6D" secondAttribute="bottom" id="z9g-NE-XfL"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="M7i-8S-9kp"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="scrollView" destination="crG-os-4sj" id="I6S-O0-hXO"/>
+                        <outlet property="spinner" destination="t1u-b9-Wjp" id="xLL-pi-lsv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHV-oI-guv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="-465"/>
+        </scene>
     </scenes>
     <classes>
         <class className="CoreDataTableViewController" superclassName="UITableViewController">
@@ -148,6 +173,17 @@
         </class>
         <class className="DemoPhotographerCDTVC" superclassName="PhotographerCDTVC">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DemoPhotographerCDTVC.h"/>
+        </class>
+        <class className="ImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="titleBarButtonItem" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="PhotographerCDTVC" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotographerCDTVC.h"/>

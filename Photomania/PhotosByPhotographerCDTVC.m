@@ -8,6 +8,7 @@
 
 #import "PhotosByPhotographerCDTVC.h"
 #import "Photo.h"
+#import "ImageViewController.h"
 
 @implementation PhotosByPhotographerCDTVC
 
@@ -49,6 +50,26 @@
     cell.detailTextLabel.text = photo.subtitle;
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = nil;
+    
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        indexPath = [self.tableView indexPathForCell:sender];
+    }
+    
+    if (indexPath) {
+        if ([segue.identifier isEqualToString:@"setImageURL:"]) {
+            if ([segue.destinationViewController respondsToSelector:@selector(setImageURL:)]) {
+                Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
+                [segue.destinationViewController performSelector:@selector(setImageURL:)
+                                                      withObject:[NSURL URLWithString:photo.imageURL]];
+                [segue.destinationViewController setTitle:photo.title];
+            }
+        }
+    }
 }
 
 @end

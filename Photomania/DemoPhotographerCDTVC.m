@@ -12,24 +12,6 @@
 
 @implementation DemoPhotographerCDTVC
 
-- (void)refresh
-{
-    [self.refreshControl beginRefreshing];
-    dispatch_queue_t fetchQ = dispatch_queue_create("Flickr Fetch Queue", NULL);
-    dispatch_async(fetchQ, ^{
-        NSArray *photos = [FlickrFetcher latestGeoreferencedPhotos];
-        // put photos in core data database
-        [self.managedObjectContext performBlock:^{
-            for (NSDictionary *photo in photos) {
-                [Photo photoWithFlickrInfo:photo inManagedObjectContext:self.managedObjectContext];
-            }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.refreshControl endRefreshing];
-            });        
-        }];
-    });
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,6 +19,13 @@
     [self.refreshControl addTarget:self
                             action:@selector(refresh)
                   forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (!self.managedObjectContext) [self useDemoDocument];
 }
 
 - (void)useDemoDocument
@@ -72,11 +61,22 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)refresh
 {
-    [super viewWillAppear:animated];
-    
-    if (!self.managedObjectContext) [self useDemoDocument];
+    [self.refreshControl beginRefreshing];
+    dispatch_queue_t fetchQ = dispatch_queue_create("Flickr Fetch Queue", NULL);
+    dispatch_async(fetchQ, ^{
+        NSArray *photos = [FlickrFetcher latestGeoreferencedPhotos];
+        // put photos in core data database
+        [self.managedObjectContext performBlock:^{
+            for (NSDictionary *photo in photos) {
+                [Photo photoWithFlickrInfo:photo inManagedObjectContext:self.managedObjectContext];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.refreshControl endRefreshing];
+            });
+        }];
+    });
 }
 
 @end
