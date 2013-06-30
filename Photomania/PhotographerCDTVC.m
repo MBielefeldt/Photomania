@@ -41,4 +41,23 @@
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = nil;
+    
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        indexPath = [self.tableView indexPathForCell:sender];
+    }
+    
+    if (indexPath) {
+        if ([segue.identifier isEqualToString:@"setPhotographer:"]) {
+            Photographer *photographer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            
+            if ([segue.destinationViewController respondsToSelector:@selector(setPhotographer:)]) {
+                [segue.destinationViewController performSelector:@selector(setPhotographer:) withObject:photographer];
+            }
+        }
+    }
+}
+
 @end
