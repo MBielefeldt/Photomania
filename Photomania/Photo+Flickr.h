@@ -11,6 +11,6 @@
 @interface Photo (Flickr)
 
 + (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary
-        InManagedObjectContext:(NSManagedObjectContext *)context;
+        inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

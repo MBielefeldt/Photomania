@@ -13,7 +13,7 @@
 
 @implementation Photo (Flickr)
 
-+ (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary InManagedObjectContext:(NSManagedObjectContext *)context
++ (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary inManagedObjectContext:(NSManagedObjectContext *)context
 {
     Photo *photo = nil;
 

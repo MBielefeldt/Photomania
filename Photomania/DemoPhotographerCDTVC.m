@@ -21,7 +21,7 @@
         // put photos in core data database
         [self.managedObjectContext performBlock:^{
             for (NSDictionary *photo in photos) {
-                [Photo photoWithFlickrInfo:photo InManagedObjectContext:self.managedObjectContext];
+                [Photo photoWithFlickrInfo:photo inManagedObjectContext:self.managedObjectContext];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.refreshControl endRefreshing];
