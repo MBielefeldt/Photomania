@@ -62,6 +62,7 @@
             // open it
             [document openWithCompletionHandler:^(BOOL suucess) {
                 self.managedObjectContext = document.managedObjectContext;
+                [self refresh];
             }];
         }
         else {
