@@ -33,7 +33,10 @@
         photo.unique = [photoDictionary[FLICKR_PHOTO_ID] description];
         photo.title = [photoDictionary[FLICKR_PHOTO_TITLE] description];
         photo.subtitle = [photoDictionary valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
-        photo.imageURL = [[FlickrFetcher urlForPhoto:photoDictionary format:FlickrPhotoFormatLarge] absoluteString];
+        photo.latitude = photoDictionary[FLICKR_LATITUDE];
+        photo.longitude = photoDictionary[FLICKR_LONGITUDE];
+        photo.imageURLString = [[FlickrFetcher urlForPhoto:photoDictionary format:FlickrPhotoFormatLarge] absoluteString];
+        photo.thumbnailURLString = [[FlickrFetcher urlForPhoto:photoDictionary format:FlickrPhotoFormatSquare] absoluteString];
         
         NSString *photographerName = [photoDictionary[FLICKR_PHOTO_OWNER] description];
         Photographer *photographer = [Photographer photographerWithName:photographerName inManagedObjectContext:context];

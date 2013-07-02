@@ -65,7 +65,7 @@
             if ([segue.destinationViewController respondsToSelector:@selector(setImageURL:)]) {
                 Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
                 [segue.destinationViewController performSelector:@selector(setImageURL:)
-                                                      withObject:[NSURL URLWithString:photo.imageURL]];
+                                                      withObject:[NSURL URLWithString:photo.imageURLString]];
                 [segue.destinationViewController setTitle:photo.title];
             }
         }

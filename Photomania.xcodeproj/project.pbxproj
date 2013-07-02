@@ -12,6 +12,9 @@
 		08464046178381D400835AA9 /* PhotographerMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08464045178381D400835AA9 /* PhotographerMapViewController.m */; };
 		084640491783824600835AA9 /* PhotosByPhotographerMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084640481783824600835AA9 /* PhotosByPhotographerMapViewController.m */; };
 		0846404C178382CF00835AA9 /* DemoPhotographerMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0846404B178382CF00835AA9 /* DemoPhotographerMapViewController.m */; };
+		0846404F1783857200835AA9 /* Photographer+MKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0846404E1783857200835AA9 /* Photographer+MKAnnotation.m */; };
+		084640521783859200835AA9 /* Photo+MKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 084640511783859200835AA9 /* Photo+MKAnnotation.m */; };
+		084640581783865F00835AA9 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 084640571783865F00835AA9 /* Photo.m */; };
 		08503D2C1780372B00B98128 /* Photographer+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 08503D2B178035D300B98128 /* Photographer+Create.m */; };
 		08503D3217803E8500B98128 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08503D3117803E8500B98128 /* CoreDataTableViewController.m */; };
 		08503D3517803F5F00B98128 /* PhotographerCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 08503D3417803F5F00B98128 /* PhotographerCDTVC.m */; };
@@ -19,7 +22,6 @@
 		08503D3E1780735C00B98128 /* PhotosByPhotographerCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 08503D3D1780735C00B98128 /* PhotosByPhotographerCDTVC.m */; };
 		0857384B17809B0B0081A29E /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0857384A17809B0B0081A29E /* ImageViewController.m */; };
 		0857384E17809B290081A29E /* AttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0857384D17809B290081A29E /* AttributedStringViewController.m */; };
-		089FA64117808BAE0023F7BA /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 089FA64017808BAE0023F7BA /* Photo.m */; };
 		089FA64417808BAE0023F7BA /* Photographer.m in Sources */ = {isa = PBXBuildFile; fileRef = 089FA64317808BAE0023F7BA /* Photographer.m */; };
 		08D459B8177F130400B5DF0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D459B7177F130400B5DF0D /* Foundation.framework */; };
 		08D459BA177F130400B5DF0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D459B9177F130400B5DF0D /* CoreGraphics.framework */; };
@@ -59,6 +61,12 @@
 		084640481783824600835AA9 /* PhotosByPhotographerMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosByPhotographerMapViewController.m; sourceTree = "<group>"; };
 		0846404A178382CF00835AA9 /* DemoPhotographerMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoPhotographerMapViewController.h; sourceTree = "<group>"; };
 		0846404B178382CF00835AA9 /* DemoPhotographerMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoPhotographerMapViewController.m; sourceTree = "<group>"; };
+		0846404D1783857200835AA9 /* Photographer+MKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photographer+MKAnnotation.h"; sourceTree = "<group>"; };
+		0846404E1783857200835AA9 /* Photographer+MKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photographer+MKAnnotation.m"; sourceTree = "<group>"; };
+		084640501783859200835AA9 /* Photo+MKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+MKAnnotation.h"; sourceTree = "<group>"; };
+		084640511783859200835AA9 /* Photo+MKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+MKAnnotation.m"; sourceTree = "<group>"; };
+		084640561783865F00835AA9 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		084640571783865F00835AA9 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		08503D2A178035D300B98128 /* Photographer+Create.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photographer+Create.h"; sourceTree = "<group>"; };
 		08503D2B178035D300B98128 /* Photographer+Create.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Photographer+Create.m"; sourceTree = "<group>"; };
 		08503D3017803E8500B98128 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -73,8 +81,6 @@
 		0857384A17809B0B0081A29E /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		0857384C17809B290081A29E /* AttributedStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController.h; sourceTree = "<group>"; };
 		0857384D17809B290081A29E /* AttributedStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedStringViewController.m; sourceTree = "<group>"; };
-		089FA63F17808BAE0023F7BA /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		089FA64017808BAE0023F7BA /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		089FA64217808BAE0023F7BA /* Photographer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photographer.h; sourceTree = "<group>"; };
 		089FA64317808BAE0023F7BA /* Photographer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photographer.m; sourceTree = "<group>"; };
 		08D459B4177F130400B5DF0D /* Photomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +132,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		084640591783873200835AA9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				08D459EC177F134A00B5DF0D /* Photomania.xcdatamodeld */,
+				084640561783865F00835AA9 /* Photo.h */,
+				084640571783865F00835AA9 /* Photo.m */,
+				08D459F5177F140B00B5DF0D /* Photo+Flickr.h */,
+				08D459F6177F140B00B5DF0D /* Photo+Flickr.m */,
+				084640501783859200835AA9 /* Photo+MKAnnotation.h */,
+				084640511783859200835AA9 /* Photo+MKAnnotation.m */,
+				089FA64217808BAE0023F7BA /* Photographer.h */,
+				089FA64317808BAE0023F7BA /* Photographer.m */,
+				08503D2A178035D300B98128 /* Photographer+Create.h */,
+				08503D2B178035D300B98128 /* Photographer+Create.m */,
+				0846404D1783857200835AA9 /* Photographer+MKAnnotation.h */,
+				0846404E1783857200835AA9 /* Photographer+MKAnnotation.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		0846405A1783876000835AA9 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				0857384C17809B290081A29E /* AttributedStringViewController.h */,
+				0857384D17809B290081A29E /* AttributedStringViewController.m */,
+				0857384917809B0B0081A29E /* ImageViewController.h */,
+				0857384A17809B0B0081A29E /* ImageViewController.m */,
+			);
+			name = ImageView;
+			sourceTree = "<group>";
+		};
 		08503D3617803F8100B98128 /* FlickrFetcher */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,15 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				08503D3617803F8100B98128 /* FlickrFetcher */,
-				08D459EC177F134A00B5DF0D /* Photomania.xcdatamodeld */,
-				089FA64217808BAE0023F7BA /* Photographer.h */,
-				089FA64317808BAE0023F7BA /* Photographer.m */,
-				089FA63F17808BAE0023F7BA /* Photo.h */,
-				089FA64017808BAE0023F7BA /* Photo.m */,
-				08D459F5177F140B00B5DF0D /* Photo+Flickr.h */,
-				08D459F6177F140B00B5DF0D /* Photo+Flickr.m */,
-				08503D2A178035D300B98128 /* Photographer+Create.h */,
-				08503D2B178035D300B98128 /* Photographer+Create.m */,
+				084640591783873200835AA9 /* CoreData */,
 				08D459C9177F130400B5DF0D /* iPhone.storyboard */,
 				08503D3017803E8500B98128 /* CoreDataTableViewController.h */,
 				08503D3117803E8500B98128 /* CoreDataTableViewController.m */,
@@ -197,10 +226,7 @@
 				0846404B178382CF00835AA9 /* DemoPhotographerMapViewController.m */,
 				084640471783824600835AA9 /* PhotosByPhotographerMapViewController.h */,
 				084640481783824600835AA9 /* PhotosByPhotographerMapViewController.m */,
-				0857384C17809B290081A29E /* AttributedStringViewController.h */,
-				0857384D17809B290081A29E /* AttributedStringViewController.m */,
-				0857384917809B0B0081A29E /* ImageViewController.h */,
-				0857384A17809B0B0081A29E /* ImageViewController.m */,
+				0846405A1783876000835AA9 /* ImageView */,
 				08D459CF177F130400B5DF0D /* Images.xcassets */,
 				08D459BE177F130400B5DF0D /* Supporting Files */,
 			);
@@ -336,20 +362,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				089FA64117808BAE0023F7BA /* Photo.m in Sources */,
 				08503D3517803F5F00B98128 /* PhotographerCDTVC.m in Sources */,
 				08D459C8177F130400B5DF0D /* AppDelegate.m in Sources */,
 				08503D3217803E8500B98128 /* CoreDataTableViewController.m in Sources */,
 				084640491783824600835AA9 /* PhotosByPhotographerMapViewController.m in Sources */,
 				089FA64417808BAE0023F7BA /* Photographer.m in Sources */,
 				0857384B17809B0B0081A29E /* ImageViewController.m in Sources */,
+				084640521783859200835AA9 /* Photo+MKAnnotation.m in Sources */,
 				08503D3B1780611000B98128 /* DemoPhotographerCDTVC.m in Sources */,
+				084640581783865F00835AA9 /* Photo.m in Sources */,
 				08503D3E1780735C00B98128 /* PhotosByPhotographerCDTVC.m in Sources */,
 				08503D2C1780372B00B98128 /* Photographer+Create.m in Sources */,
 				08D459FA177F16A000B5DF0D /* FlickrFetcher.m in Sources */,
 				08464046178381D400835AA9 /* PhotographerMapViewController.m in Sources */,
 				0857384E17809B290081A29E /* AttributedStringViewController.m in Sources */,
 				0846404C178382CF00835AA9 /* DemoPhotographerMapViewController.m in Sources */,
+				0846404F1783857200835AA9 /* Photographer+MKAnnotation.m in Sources */,
 				08D459C4177F130400B5DF0D /* main.m in Sources */,
 				084640431783812100835AA9 /* MapViewController.m in Sources */,
 				08D459F7177F140B00B5DF0D /* Photo+Flickr.m in Sources */,

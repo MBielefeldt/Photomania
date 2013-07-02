@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AttributedStringViewController : UIViewController
+
 @property (nonatomic, strong) NSAttributedString *text;
+
 @end
