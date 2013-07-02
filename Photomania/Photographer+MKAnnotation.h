@@ -11,4 +11,6 @@
 
 @interface Photographer (MKAnnotation) <MKAnnotation>
 
+- (UIImage *)thumbnail; // blocks calling thread
+
 @end

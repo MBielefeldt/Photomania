@@ -20,4 +20,11 @@
     return coordinate;
 }
 
+- (UIImage *)thumbnail
+{
+    NSURL *url = [NSURL URLWithString:self.thumbnailURLString];
+    
+    return [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+}
+
 @end

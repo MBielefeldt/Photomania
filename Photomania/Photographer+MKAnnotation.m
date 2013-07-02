@@ -25,4 +25,9 @@
     return [[self.photos anyObject] coordinate];
 }
 
+- (UIImage *)thumbnail
+{
+    return [[self.photos anyObject] thumbnail];
+}
+
 @end
