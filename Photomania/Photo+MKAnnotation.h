@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 GN ReSound A/S. All rights reserved.
 //
 
-#import "Photo.h"
 #import <MapKit/MapKit.h>
+#import "Photo.h"
 
 @interface Photo (MKAnnotation) <MKAnnotation>
 
