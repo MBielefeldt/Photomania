@@ -27,7 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self reload];
+    if (self.managedObjectContext) {
+        [self reload];        
+    }
 }
 
 - (void)reload
@@ -35,8 +37,9 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photographer"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     request.predicate = [NSPredicate predicateWithFormat:@"photos.@count > 2"];
-    
-    NSArray *photographers = [self.managedObjectContext executeFetchRequest:request error:NULL];
+
+    NSError *error = nil;
+    NSArray *photographers = [self.managedObjectContext executeFetchRequest:request error:&error];
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotations:photographers];
 }
