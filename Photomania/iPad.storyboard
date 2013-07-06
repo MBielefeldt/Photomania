@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.9" systemVersion="13A497d" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="zdF-IE-IYa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.9" systemVersion="13A497d" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="KHf-O6-FKT">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
@@ -14,22 +14,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gKd-hY-aEE">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="FRM-sd-Eck"/>
+                    <navigationItem key="navigationItem" id="eov-7S-Vaq"/>
                     <connections>
                         <outlet property="mapView" destination="gKd-hY-aEE" id="Gfm-Ao-jvQ"/>
-                        <segue destination="Uzg-xX-cBU" kind="push" identifier="setPhotographer:" id="zZE-c1-Ylc"/>
+                        <segue destination="Uzg-xX-cBU" kind="push" identifier="setPhotographer:" id="opl-tj-HwL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6c-HZ-k8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="-826"/>
+            <point key="canvasLocation" x="1646" y="-826"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="S2c-ed-nHX">
@@ -44,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBD-Fv-bwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2643" y="-819"/>
+            <point key="canvasLocation" x="3617" y="-819"/>
         </scene>
         <!--Photos By Photographer Map View Controller-->
         <scene sceneID="OuH-Ng-uav">
@@ -62,35 +62,60 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="Aig-Vo-bMl"/>
+                    <navigationItem key="navigationItem" id="MuU-ez-xuX"/>
                     <connections>
                         <outlet property="mapView" destination="dRP-P2-H5X" id="4ap-LW-7m2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26c-hf-6aD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677" y="-826"/>
+            <point key="canvasLocation" x="2651" y="-826"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="gdb-g8-iw1">
+        <scene sceneID="Hme-l9-kKv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zdF-IE-IYa" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KHf-O6-FKT" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="onP-X4-xVR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zim-s2-Y1S">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="WeM-qs-F1p" kind="relationship" relationship="rootViewController" id="wJC-Iw-WqD"/>
+                        <segue destination="WeM-qs-F1p" kind="relationship" relationship="rootViewController" id="Taj-vu-72P"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oaN-rq-KOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="veu-7V-o8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-324" y="-826"/>
+            <point key="canvasLocation" x="672" y="-826"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="DemoPhotographerMapViewController" superclassName="PhotographerMapViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DemoPhotographerMapViewController.h"/>
+        </class>
+        <class className="ImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="titleBarButtonItem" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="PhotographerMapViewController" superclassName="MapViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotographerMapViewController.h"/>
+        </class>
+        <class className="PhotosByPhotographerMapViewController" superclassName="MapViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosByPhotographerMapViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>

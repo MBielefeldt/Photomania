@@ -7,6 +7,7 @@
 //
 
 #import "PhotosByPhotographerMapViewController.h"
+#import "Photo+MKAnnotation.h"
 
 @interface PhotosByPhotographerMapViewController ()
 
@@ -33,7 +34,20 @@
 
 - (void)reload
 {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"phTitle"
+                                                              ascending:YES
+                                                               selector:@selector(localizedCaseInsensitiveCompare:)]];
+    request.predicate = [NSPredicate predicateWithFormat:@"whoTook = %@", self.photographer];
+    NSArray *photos = [self.photographer.managedObjectContext executeFetchRequest:request error:NULL];
     
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView addAnnotations:photos];
+    
+    Photo *photo = [photos lastObject];
+    if (photo) {
+        self.mapView.centerCoordinate = photo.coordinate;
+    }
 }
 
 @end
