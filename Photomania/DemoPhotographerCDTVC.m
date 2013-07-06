@@ -31,7 +31,7 @@
 - (void)useDemoDocument
 {
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    url = [url URLByAppendingPathComponent:@"Demo Document"];
+    url = [url URLByAppendingPathComponent:@"Demo Document iPhone"];
     
     UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
     
