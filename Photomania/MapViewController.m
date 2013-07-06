@@ -20,6 +20,11 @@
     [super viewDidLoad];
     
     self.mapView.delegate = self;
+    
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(55.59, 13.42);
+    MKCoordinateSpan span = MKCoordinateSpanMake(20.0, 20.0);
+    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
+    [self.mapView setRegion:region];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
