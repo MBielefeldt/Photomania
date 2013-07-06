@@ -18,7 +18,7 @@
     Photo *photo = nil;
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"phTitle" ascending:YES]];
     request.predicate = [NSPredicate predicateWithFormat:@"unique = %@", [photoDictionary[FLICKR_PHOTO_ID] description]];
     
     NSError *error;
@@ -31,8 +31,8 @@
         photo = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:context];
         
         photo.unique = [photoDictionary[FLICKR_PHOTO_ID] description];
-        photo.title = [photoDictionary[FLICKR_PHOTO_TITLE] description];
-        photo.subtitle = [photoDictionary valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
+        photo.phTitle = [photoDictionary[FLICKR_PHOTO_TITLE] description];
+        photo.phSubtitle = [photoDictionary valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
         photo.latitude = photoDictionary[FLICKR_LATITUDE];
         photo.longitude = photoDictionary[FLICKR_LONGITUDE];
         photo.imageURLString = [[FlickrFetcher urlForPhoto:photoDictionary format:FlickrPhotoFormatLarge] absoluteString];

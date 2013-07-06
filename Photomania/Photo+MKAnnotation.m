@@ -10,6 +10,16 @@
 
 @implementation Photo (MKAnnotation)
 
+- (NSString *)title
+{
+    return self.phTitle;
+}
+
+- (NSString *)subtitle
+{
+    return self.phSubtitle;
+}
+
 - (CLLocationCoordinate2D)coordinate
 {
     CLLocationCoordinate2D coordinate;

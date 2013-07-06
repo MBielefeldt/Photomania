@@ -25,7 +25,7 @@
     if (self.photographer.managedObjectContext) {
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
-        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title"
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"phTitle"
                                                               ascending:YES
                                                                selector:@selector(localizedCaseInsensitiveCompare:)]];
         request.predicate = [NSPredicate predicateWithFormat:@"whoTook = %@", self.photographer];
@@ -46,8 +46,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Photo"];
     
     Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = photo.title;
-    cell.detailTextLabel.text = photo.subtitle;
+    cell.textLabel.text = photo.phTitle;
+    cell.detailTextLabel.text = photo.phSubtitle;
     
     return cell;
 }
@@ -66,7 +66,7 @@
                 Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
                 [segue.destinationViewController performSelector:@selector(setImageURL:)
                                                       withObject:[NSURL URLWithString:photo.imageURLString]];
-                [segue.destinationViewController setTitle:photo.title];
+                [segue.destinationViewController setTitle:photo.phTitle];
             }
         }
     }
