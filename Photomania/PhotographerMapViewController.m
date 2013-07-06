@@ -31,6 +31,11 @@
     if (self.managedObjectContext) {
         [self reload];        
     }
+    
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(55.59, 13.42);
+    MKCoordinateSpan span = MKCoordinateSpanMake(30.0, 30.0);
+    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
+    [self.mapView setRegion:region];
 }
 
 - (void)reload

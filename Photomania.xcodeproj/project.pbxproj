@@ -23,6 +23,7 @@
 		08503D3E1780735C00B98128 /* PhotosByPhotographerCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 08503D3D1780735C00B98128 /* PhotosByPhotographerCDTVC.m */; };
 		0857384B17809B0B0081A29E /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0857384A17809B0B0081A29E /* ImageViewController.m */; };
 		0857384E17809B290081A29E /* AttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0857384D17809B290081A29E /* AttributedStringViewController.m */; };
+		085DD0C71788D12A00E2380C /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 085DD0C61788D12A00E2380C /* PhotoViewController.m */; };
 		08D459B8177F130400B5DF0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D459B7177F130400B5DF0D /* Foundation.framework */; };
 		08D459BA177F130400B5DF0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D459B9177F130400B5DF0D /* CoreGraphics.framework */; };
 		08D459BC177F130400B5DF0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D459BB177F130400B5DF0D /* UIKit.framework */; };
@@ -83,6 +84,8 @@
 		0857384A17809B0B0081A29E /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		0857384C17809B290081A29E /* AttributedStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController.h; sourceTree = "<group>"; };
 		0857384D17809B290081A29E /* AttributedStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedStringViewController.m; sourceTree = "<group>"; };
+		085DD0C51788D12A00E2380C /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		085DD0C61788D12A00E2380C /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		08D459B4177F130400B5DF0D /* Photomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D459B7177F130400B5DF0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08D459B9177F130400B5DF0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,6 +167,8 @@
 				0846404B178382CF00835AA9 /* DemoPhotographerMapViewController.m */,
 				084640471783824600835AA9 /* PhotosByPhotographerMapViewController.h */,
 				084640481783824600835AA9 /* PhotosByPhotographerMapViewController.m */,
+				085DD0C51788D12A00E2380C /* PhotoViewController.h */,
+				085DD0C61788D12A00E2380C /* PhotoViewController.m */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				084640491783824600835AA9 /* PhotosByPhotographerMapViewController.m in Sources */,
 				0846405D1783981000835AA9 /* Photographer.m in Sources */,
 				0857384B17809B0B0081A29E /* ImageViewController.m in Sources */,
+				085DD0C71788D12A00E2380C /* PhotoViewController.m in Sources */,
 				084640521783859200835AA9 /* Photo+MKAnnotation.m in Sources */,
 				08503D3B1780611000B98128 /* DemoPhotographerCDTVC.m in Sources */,
 				084640601783981100835AA9 /* Photo.m in Sources */,

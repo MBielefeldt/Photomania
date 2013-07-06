@@ -11,8 +11,6 @@
 
 @interface MapViewController ()
 
-@property (nonatomic) BOOL needUpdateRegion;
-
 @end
 
 @implementation MapViewController
@@ -22,22 +20,6 @@
     [super viewDidLoad];
     
     self.mapView.delegate = self;
-    
-    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(55.59, 13.42);
-    MKCoordinateSpan span = MKCoordinateSpanMake(30.0, 30.0);
-    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
-    [self.mapView setRegion:region];
-    
-    self.needUpdateRegion = YES;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    if (self.needUpdateRegion) {
-        [self updateRegion];
-    }
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -69,38 +51,6 @@
         if ([view.annotation respondsToSelector:@selector(thumbnail)]) {
             UIImageView *imageView = (UIImageView *)view.leftCalloutAccessoryView;
             imageView.image = [view.annotation performSelector:@selector(thumbnail)]; // this should be done as GCD to avoid blocking the thread
-        }
-    }
-}
-
-- (void)updateRegion
-{
-    self.needUpdateRegion = NO;
-    
-    CGRect boundingRect;
-    BOOL started = NO;
-    
-    for (id <MKAnnotation> annotation in self.mapView.annotations) {
-        CGRect annotationRect = CGRectMake(annotation.coordinate.latitude, annotation.coordinate.longitude, 0, 0);
-        if (!started) {
-            started = YES;
-            boundingRect = annotationRect;
-        }
-        else {
-            boundingRect = CGRectUnion(boundingRect, annotationRect);
-        }
-    }
-    
-    if (started) {
-        boundingRect = CGRectInset(boundingRect, -0.2, -0.2);
-        
-        if (boundingRect.size.width < 20 && boundingRect.size.height < 20) {
-            MKCoordinateRegion region;
-            region.center.latitude = boundingRect.origin.x + boundingRect.size.width / 2;
-            region.center.longitude = boundingRect.origin.y + boundingRect.size.height / 2;
-            region.span.latitudeDelta = boundingRect.size.width;
-            region.span.longitudeDelta = boundingRect.size.height;
-            [self.mapView setRegion:region animated:YES];
         }
     }
 }

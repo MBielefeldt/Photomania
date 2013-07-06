@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
     </dependencies>
     <scenes>
-        <!--Demo Photographer Map View Controller - Photographer-->
+        <!--Demo Photographer Map View Controller - Photographers-->
         <scene sceneID="LNB-zO-gqG">
             <objects>
                 <viewController id="WeM-qs-F1p" customClass="DemoPhotographerMapViewController" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Photographer" id="eov-7S-Vaq"/>
+                    <navigationItem key="navigationItem" title="Photographers" id="eov-7S-Vaq"/>
                     <connections>
                         <outlet property="mapView" destination="gKd-hY-aEE" id="Gfm-Ao-jvQ"/>
                         <segue destination="Uzg-xX-cBU" kind="push" identifier="setPhotographer:" id="opl-tj-HwL"/>
@@ -31,20 +31,30 @@
             </objects>
             <point key="canvasLocation" x="1646" y="-826"/>
         </scene>
-        <!--Image View Controller-->
+        <!--Photo View Controller-->
         <scene sceneID="S2c-ed-nHX">
             <objects>
-                <viewController id="hpO-s2-o8D" customClass="ImageViewController" sceneMemberID="viewController">
+                <viewController id="hpO-s2-o8D" customClass="PhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0b3-Ro-pe6">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wR2-Bs-8Dw">
+                                <rect key="frame" x="-306" y="-29" width="1094" height="1068"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="ODj-d4-iEk"/>
+                    <connections>
+                        <outlet property="scrollView" destination="wR2-Bs-8Dw" id="PjB-kW-QSn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBD-Fv-bwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3617" y="-819"/>
+            <point key="canvasLocation" x="3617" y="-826"/>
         </scene>
         <!--Photos By Photographer Map View Controller-->
         <scene sceneID="OuH-Ng-uav">
@@ -65,6 +75,7 @@
                     <navigationItem key="navigationItem" id="MuU-ez-xuX"/>
                     <connections>
                         <outlet property="mapView" destination="dRP-P2-H5X" id="4ap-LW-7m2"/>
+                        <segue destination="hpO-s2-o8D" kind="push" identifier="setPhoto:" id="XCe-iU-euY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26c-hf-6aD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,6 +119,9 @@
             <relationships>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
+        </class>
+        <class className="PhotoViewController" superclassName="ImageViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewController.h"/>
         </class>
         <class className="PhotographerMapViewController" superclassName="MapViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotographerMapViewController.h"/>
