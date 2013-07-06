@@ -11,6 +11,8 @@
 
 @interface MapViewController ()
 
+@property (nonatomic) BOOL needUpdateRegion;
+
 @end
 
 @implementation MapViewController
@@ -22,9 +24,20 @@
     self.mapView.delegate = self;
     
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake(55.59, 13.42);
-    MKCoordinateSpan span = MKCoordinateSpanMake(20.0, 20.0);
+    MKCoordinateSpan span = MKCoordinateSpanMake(30.0, 30.0);
     MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
     [self.mapView setRegion:region];
+    
+    self.needUpdateRegion = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (self.needUpdateRegion) {
+        [self updateRegion];
+    }
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -62,6 +75,8 @@
 
 - (void)updateRegion
 {
+    self.needUpdateRegion = NO;
+    
     CGRect boundingRect;
     BOOL started = NO;
     

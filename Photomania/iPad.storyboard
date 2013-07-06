@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
     </dependencies>
     <scenes>
-        <!--Demo Photographer Map View Controller-->
+        <!--Demo Photographer Map View Controller - Photographer-->
         <scene sceneID="LNB-zO-gqG">
             <objects>
                 <viewController id="WeM-qs-F1p" customClass="DemoPhotographerMapViewController" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="eov-7S-Vaq"/>
+                    <navigationItem key="navigationItem" title="Photographer" id="eov-7S-Vaq"/>
                     <connections>
                         <outlet property="mapView" destination="gKd-hY-aEE" id="Gfm-Ao-jvQ"/>
                         <segue destination="Uzg-xX-cBU" kind="push" identifier="setPhotographer:" id="opl-tj-HwL"/>
