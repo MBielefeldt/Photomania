@@ -132,6 +132,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080A169C178824C400839398 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				08D459C9177F130400B5DF0D /* iPhone.storyboard */,
+				08503D3017803E8500B98128 /* CoreDataTableViewController.h */,
+				08503D3117803E8500B98128 /* CoreDataTableViewController.m */,
+				08503D3317803F5F00B98128 /* PhotographerCDTVC.h */,
+				08503D3417803F5F00B98128 /* PhotographerCDTVC.m */,
+				08503D391780459100B98128 /* DemoPhotographerCDTVC.h */,
+				08503D3A1780459100B98128 /* DemoPhotographerCDTVC.m */,
+				08503D3C1780735C00B98128 /* PhotosByPhotographerCDTVC.h */,
+				08503D3D1780735C00B98128 /* PhotosByPhotographerCDTVC.m */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		080A169D178824D200839398 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				0846403F1783806A00835AA9 /* iPad.storyboard */,
+				084640501783859200835AA9 /* Photo+MKAnnotation.h */,
+				084640511783859200835AA9 /* Photo+MKAnnotation.m */,
+				0846404D1783857200835AA9 /* Photographer+MKAnnotation.h */,
+				0846404E1783857200835AA9 /* Photographer+MKAnnotation.m */,
+				084640411783812100835AA9 /* MapViewController.h */,
+				084640421783812100835AA9 /* MapViewController.m */,
+				08464044178381D400835AA9 /* PhotographerMapViewController.h */,
+				08464045178381D400835AA9 /* PhotographerMapViewController.m */,
+				0846404A178382CF00835AA9 /* DemoPhotographerMapViewController.h */,
+				0846404B178382CF00835AA9 /* DemoPhotographerMapViewController.m */,
+				084640471783824600835AA9 /* PhotosByPhotographerMapViewController.h */,
+				084640481783824600835AA9 /* PhotosByPhotographerMapViewController.m */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		084640591783873200835AA9 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,28 +240,8 @@
 			children = (
 				08503D3617803F8100B98128 /* FlickrFetcher */,
 				084640591783873200835AA9 /* CoreData */,
-				08D459C9177F130400B5DF0D /* iPhone.storyboard */,
-				08503D3017803E8500B98128 /* CoreDataTableViewController.h */,
-				08503D3117803E8500B98128 /* CoreDataTableViewController.m */,
-				08503D3317803F5F00B98128 /* PhotographerCDTVC.h */,
-				08503D3417803F5F00B98128 /* PhotographerCDTVC.m */,
-				08503D391780459100B98128 /* DemoPhotographerCDTVC.h */,
-				08503D3A1780459100B98128 /* DemoPhotographerCDTVC.m */,
-				08503D3C1780735C00B98128 /* PhotosByPhotographerCDTVC.h */,
-				08503D3D1780735C00B98128 /* PhotosByPhotographerCDTVC.m */,
-				0846403F1783806A00835AA9 /* iPad.storyboard */,
-				084640501783859200835AA9 /* Photo+MKAnnotation.h */,
-				084640511783859200835AA9 /* Photo+MKAnnotation.m */,
-				0846404D1783857200835AA9 /* Photographer+MKAnnotation.h */,
-				0846404E1783857200835AA9 /* Photographer+MKAnnotation.m */,
-				084640411783812100835AA9 /* MapViewController.h */,
-				084640421783812100835AA9 /* MapViewController.m */,
-				08464044178381D400835AA9 /* PhotographerMapViewController.h */,
-				08464045178381D400835AA9 /* PhotographerMapViewController.m */,
-				0846404A178382CF00835AA9 /* DemoPhotographerMapViewController.h */,
-				0846404B178382CF00835AA9 /* DemoPhotographerMapViewController.m */,
-				084640471783824600835AA9 /* PhotosByPhotographerMapViewController.h */,
-				084640481783824600835AA9 /* PhotosByPhotographerMapViewController.m */,
+				080A169C178824C400839398 /* iPhone */,
+				080A169D178824D200839398 /* iPad */,
 				0846405A1783876000835AA9 /* ImageView */,
 				08D459CF177F130400B5DF0D /* Images.xcassets */,
 				08D459BE177F130400B5DF0D /* Supporting Files */,

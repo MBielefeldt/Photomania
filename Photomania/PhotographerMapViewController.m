@@ -7,7 +7,8 @@
 //
 
 #import "PhotographerMapViewController.h"
-#import "Photographer.h"
+#import "PhotosByPhotographerMapViewController.h"
+#import "Photographer+MKAnnotation.h"
 
 @interface PhotographerMapViewController ()
 
@@ -42,6 +43,28 @@
     NSArray *photographers = [self.managedObjectContext executeFetchRequest:request error:&error];
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotations:photographers];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"setPhotographer:"]) {
+        if ([sender isKindOfClass:[MKAnnotationView class]]) {
+            MKAnnotationView *annotationView = sender;
+            if ([annotationView.annotation isKindOfClass:[Photographer class]]) {
+                Photographer *photographer = annotationView.annotation;
+                
+                if ([segue.destinationViewController respondsToSelector:@selector(setPhotographer:)]) {
+                    [segue.destinationViewController performSelector:@selector(setPhotographer:) withObject:photographer];
+                }
+            }
+        }
+    }
+    
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    [self performSegueWithIdentifier:@"setPhotographer:" sender:view];
 }
 
 @end
