@@ -13,12 +13,18 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gKd-hY-aEE">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gKd-hY-aEE">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gKd-hY-aEE" firstAttribute="trailing" secondItem="qA0-9i-IDb" secondAttribute="trailing" id="Jo4-ke-ZiH"/>
+                            <constraint firstAttribute="bottom" secondItem="gKd-hY-aEE" secondAttribute="bottom" constant="-64" id="rv0-I2-OYy"/>
+                            <constraint firstItem="gKd-hY-aEE" firstAttribute="leading" secondItem="qA0-9i-IDb" secondAttribute="leading" id="u6S-Dm-uRU"/>
+                            <constraint firstItem="gKd-hY-aEE" firstAttribute="top" secondItem="qA0-9i-IDb" secondAttribute="top" id="vcV-Rk-0xm"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Photographers" id="eov-7S-Vaq"/>
@@ -29,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6c-HZ-k8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646" y="-826"/>
+            <point key="canvasLocation" x="1654" y="-826"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="S2c-ed-nHX">
@@ -39,20 +45,34 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wR2-Bs-8Dw">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wR2-Bs-8Dw">
+                                <rect key="frame" x="-158" y="-5" width="931" height="1292"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSb-cL-OIa">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSb-cL-OIa">
                                 <rect key="frame" x="457" y="20" width="291" height="271"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="291" id="Z1l-1I-anp"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="291" id="aJq-zV-BbQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="271" id="pqh-Au-Xuk"/>
+                                    <constraint firstAttribute="height" constant="271" id="voz-3k-zwC"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="R0d-2x-76d" kind="embed" identifier="EmbeddedMapForPhoto" id="FXr-IC-CgP"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wR2-Bs-8Dw" secondAttribute="trailing" constant="-5" id="1e2-q7-8gG"/>
+                            <constraint firstAttribute="trailing" secondItem="RSb-cL-OIa" secondAttribute="trailing" constant="20" symbolic="YES" id="8yh-XP-zIC"/>
+                            <constraint firstItem="wR2-Bs-8Dw" firstAttribute="top" secondItem="0b3-Ro-pe6" secondAttribute="top" constant="-5" id="HgV-fw-EWK"/>
+                            <constraint firstAttribute="bottom" secondItem="wR2-Bs-8Dw" secondAttribute="bottom" constant="-327" id="NfB-lT-Fbj"/>
+                            <constraint firstItem="RSb-cL-OIa" firstAttribute="top" secondItem="0b3-Ro-pe6" secondAttribute="top" constant="20" symbolic="YES" id="Rc9-9Y-LBv"/>
+                            <constraint firstItem="wR2-Bs-8Dw" firstAttribute="leading" secondItem="0b3-Ro-pe6" secondAttribute="leading" constant="-158" id="bvl-9c-ZVn"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="ODj-d4-iEk"/>
@@ -72,12 +92,18 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dRP-P2-H5X">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dRP-P2-H5X">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dRP-P2-H5X" firstAttribute="trailing" secondItem="dnM-Rl-Jty" secondAttribute="trailing" id="Y99-hC-5vO"/>
+                            <constraint firstItem="dRP-P2-H5X" firstAttribute="leading" secondItem="dnM-Rl-Jty" secondAttribute="leading" id="hix-3M-fzY"/>
+                            <constraint firstItem="dRP-P2-H5X" firstAttribute="top" secondItem="dnM-Rl-Jty" secondAttribute="top" id="kL7-kD-BF7"/>
+                            <constraint firstAttribute="bottom" secondItem="dRP-P2-H5X" secondAttribute="bottom" constant="-64" id="v5f-5R-1dl"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="MuU-ez-xuX"/>
@@ -152,6 +178,9 @@
             <relationships>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="PhotoViewController" superclassName="ImageViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewController.h"/>
